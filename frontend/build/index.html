@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=0, initial-scale=1, minimum-scale=1, width=device-width, height=device-height">
+  <!-- PWA primary color -->
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="google-site-verification" content="SxnjL7AvQqoLutYELxJgu_c2LgQ9KKYDA96LaCOD21g" />
+  <link rel="shortcut icon" href="favicon.ico">
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500" rel="stylesheet">
+
+
+
+  <title>Ocelot</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+
+  <!-- The external CS 220 library of functions to be called by IDE -->
+  <!-- <script src="library.js"></script>  -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.13.1/min/vs/loader.js"></script>
+  <script type="text/javascript">
+    require.config({
+      paths: {
+        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.13.1/min/vs'
+      }
+    });
+    window.MonacoEnvironment = {
+      getWorkerUrl: function (workerId, label) {
+        return 'monaco-editor-worker-loader-proxy.js';
+      }
+    }
+
+
+    // require(["vs/editor/editor.main"], function () { })
+    // This line breaks the editor, I suspect it's that 
+    // we're supposed to initialize the editor in the function but since
+    // we have it somewhere else, it messed up how the editor was initialized.
+  </script>
+  <script src="js/main.bundle.js"></script>
+</body>
+
+</html>
