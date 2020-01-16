@@ -1,0 +1,20 @@
+package MinuteBotsProto;
+
+// A 2D float vector.
+message Vector2f {
+  required float x = 1;
+  required float y = 2;
+}
+
+// A 2D Pose.
+message Pose2Df {
+  // Translation location.
+  required Vector2f loc = 1;
+  required float angle = 2;
+}
+
+// A 2D line segment.
+message Line2Df {
+  required Vector2f v0 = 1;
+  required Vector2f v1 = 2;
+}

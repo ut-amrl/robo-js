@@ -1,0 +1,120 @@
+{
+  "nested": {
+    "JSBotsProto": {
+      "nested": {
+        "Puppet": {
+          "fields": {
+            "sslVisionId": {
+              "rule": "required",
+              "type": "uint32",
+              "id": 1
+            },
+            "x": {
+              "type": "float",
+              "id": 2
+            },
+            "y": {
+              "type": "float",
+              "id": 3
+            },
+            "theta": {
+              "type": "float",
+              "id": 4
+            },
+            "kick": {
+              "type": "float",
+              "id": 5
+            },
+            "dssBall": {
+              "type": "bool",
+              "id": 6
+            },
+            "halt": {
+              "type": "bool",
+              "id": 7
+            },
+            "catchBall": {
+              "type": "bool",
+              "id": 8
+            }
+          }
+        },
+        "World": {
+          "fields": {
+            "ourBots": {
+              "rule": "repeated",
+              "type": "Robot",
+              "id": 1
+            },
+            "theirBots": {
+              "rule": "repeated",
+              "type": "Robot",
+              "id": 2
+            },
+            "pX": {
+              "rule": "required",
+              "type": "float",
+              "id": 3
+            },
+            "pY": {
+              "rule": "required",
+              "type": "float",
+              "id": 4
+            },
+            "vX": {
+              "rule": "required",
+              "type": "float",
+              "id": 5
+            },
+            "vY": {
+              "rule": "required",
+              "type": "float",
+              "id": 6
+            }
+          },
+          "nested": {
+            "Robot": {
+              "fields": {
+                "id": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "pX": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "pY": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                },
+                "pTheta": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4
+                },
+                "vX": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 5
+                },
+                "vY": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 6
+                },
+                "vTheta": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 7
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

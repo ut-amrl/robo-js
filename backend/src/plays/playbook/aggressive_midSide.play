@@ -1,0 +1,22 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Aggressive Midfield Offense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"normal_play", "midfield", "!kickoff"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_play"} },
+  },
+  roles = {
+    {"goalie"},
+    {"primary_attacker"},
+    {"primary_defender"},
+    {"secondary_attacker"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"tertiary_defender"},
+  },
+}

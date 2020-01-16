@@ -1,0 +1,22 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Scrimmage Offense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"normal_play", "!kickoff"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_play"} },
+  },
+  roles = {
+    {"primary_attacker"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"stopped"},
+    {"stopped"},
+    {"stopped"}
+  },
+}

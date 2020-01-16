@@ -1,0 +1,20 @@
+-- A simple defense play intended to be used in the absence of better options
+return {
+  name = "Naive Defense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"loose_ball"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!loose_ball"} },
+  },
+  roles = {
+    {"goalie"},
+    {"main_attacker"},
+    {"secondary_attacker"},
+    {"guard_point 0_-1000 200"},
+    {"guard_point -1000_0 200"},
+    {"primary_defender"},
+  },
+}

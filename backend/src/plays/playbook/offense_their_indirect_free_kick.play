@@ -1,0 +1,21 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Their Indirect Free Kick",
+  weight = 1,
+  timeout = 9999999,
+  applicability = {
+    {"indirect_free_them","!normal_play"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!indirect_free_them"}, {"halt"}},
+    { outcome = "aborted", condition = {"normal_play"}, {"halt"}},
+  },
+  roles = {
+    {"safe_follow_ball"},
+    {"secondary_attacker"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"safe_follow_ball"},
+    {"safe_follow_ball"},
+  },
+}

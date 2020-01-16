@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simulator</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="canvas.js"></script>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <canvas id="field" width="1400" height="900"></canvas>
+    <div class="controls">
+      <button id="conf" class="btn btn-disabled conf-btn" type="button" disabled>Configure</button>
+      <div id="conf-options-container" style="visibility: hidden;">
+        <label for="conf-option">Please choose an activity configuration:</label>
+        <select id="conf-option" name="conf-option">
+          <option value="0" selected>Default</option>
+          <option value="1">Ball</option>
+          <option value="2">Gold #1 </option>
+          <option value="3">Gold #2</option>
+          <option value="4">Maze #1</option>
+          <option value="5">Maze #2</option>
+          <option value="6">Maze #3</option>
+          <option value="7">MultiRobot</option>
+          <option value="8">Tag</option>
+          <option value="9">PK Shootout</option>
+          <option value="10">Soccer (Offense)</option>
+          <option value="11">Soccer (Defense)</option>
+          <option value="12">Random Ball</option>
+
+        </select>
+        <button id="start" class="btn start-btn" type="button">Start</button>
+      </div>
+      <button id="stop" class="btn btn-disabled stop-btn" type="button" disabled>Stop</button>
+    </div>
+  </body>
+</html>

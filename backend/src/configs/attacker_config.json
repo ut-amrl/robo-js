@@ -1,0 +1,16 @@
+{
+  "ball_velocity": 100,
+  "kick_percent": 85,
+  "y_prime_vel": 200,
+  "align": 10.0,
+  "distance": 146,
+  "kick_timeout": 40,
+  "angle": 5.0,
+  "relative_vel": 400,
+  "catch_radius": 540,
+  "angular_vel": 50,
+  "kick_follow_through": 10,
+  "kick_speed": 1000,
+  "could_score_speed": 1000,
+  "catch_velocity": 1500
+}

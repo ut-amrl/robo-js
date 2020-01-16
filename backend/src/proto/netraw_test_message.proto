@@ -1,0 +1,6 @@
+// A simple message for debugging network latency.
+message NetrawTestMessage {
+  required double send_time = 1;
+  optional bytes payload = 2;
+  optional uint32 count = 3;
+}

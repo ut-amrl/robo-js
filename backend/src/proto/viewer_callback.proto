@@ -1,0 +1,32 @@
+package MinuteBotsProto;
+
+message SelectedRobot {
+  enum Team {
+    TEAM_BLUE = 0;
+    TEAM_YELLOW = 1;
+  }
+  required Team team = 1;
+  required uint32 id = 2;
+}
+
+message MouseEvent{
+  required float x = 1;
+  required float y = 2;
+  required bool alt = 3;
+  required bool ctrl = 4;
+  required bool shift = 5;
+  required int32 button = 6;
+  enum SelectionType {
+    NONE_SELECTED = 0;
+    BALL_SELECTED = 1;
+    ROBOT_SELECTED = 2;
+  }
+  optional SelectionType selection = 7;
+  optional SelectedRobot selected_robot = 8;
+}
+
+message MouseCallback {
+  optional MouseEvent mouse_down = 1;
+  optional MouseEvent mouse_up = 2;
+  optional MouseEvent mouse_move = 3;
+}

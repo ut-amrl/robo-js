@@ -1,0 +1,21 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Test Passing",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"normal_play"},
+    {"normal_play"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_play"} },
+  },
+  roles = {
+    {"main_attacker"},
+    {"tertiary_attacker"},
+    {"stopped"},
+    {"stopped"},
+    {"stopped"},
+    {"stopped"},
+  },
+}

@@ -1,0 +1,22 @@
+-- Halt play which brings all robots to a stop.
+return {
+  name = "Halt",
+  weight = 1,
+  timeout = 9999999,
+  applicability = {
+    {"ball_placement_us"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!ball_placement_us"} },
+  },
+  roles = {
+    {"goalie"},
+    {"better_ball_placement"},
+    {"primary_defender"},
+    {"primary_defender"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"secondary_defender"},
+    {"secondary_defender"}
+  },
+}

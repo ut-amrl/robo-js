@@ -1,0 +1,21 @@
+-- A test play
+return {
+  name = "CITestPlay",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"test", "!halt"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!test"} },
+    { outcome = "aborted", condition = {"halt"} },
+  },
+  roles = {
+   {"random_points"},
+   {"random_points"},
+   {"random_points"},
+   {"random_points"},
+   {"random_points"},
+   {"random_points"},
+  },
+}

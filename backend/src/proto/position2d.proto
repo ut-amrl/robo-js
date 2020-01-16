@@ -1,0 +1,7 @@
+package MinuteBotsProto;
+
+// Next id: 3
+message Position2d {
+  required int64 x = 1;
+  required int64 y = 2;
+}

@@ -1,0 +1,17 @@
+import "point_obstacle.proto";
+import "position2d.proto";
+package MinuteBotsProto;
+
+// Next id: 2
+message MultiPosition {
+  repeated Position2d positions = 1;
+}
+
+// Next id: 4
+message ReplanScenerio {
+  required PointObstacle point_obstacle = 1;
+  required Position2d center = 2;
+  required int64 radius = 3;
+  required MultiPosition start = 4;
+  required MultiPosition goal = 5;
+}

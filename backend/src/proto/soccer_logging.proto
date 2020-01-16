@@ -1,0 +1,150 @@
+import "geometry.proto";
+import "messages_robocup_ssl_detection.proto";
+import "messages_robocup_ssl_geometry.proto";
+import "referee.proto";
+import "tuning_data.proto";
+
+package MinuteBotsProto;
+
+message RobotState {
+  required int32 robot_id = 1;
+  enum Team {
+    TEAM_BLUE = 0;
+    TEAM_YELLOW = 1;
+  }
+  optional Team team = 2;
+
+  // Estimated pose, after filtering.
+  optional Pose2Df pose = 3;
+
+  // Translational Velocity of the robot
+  optional Vector2f velocity = 7;
+
+  optional Vector2f observed_velocity = 11;
+
+  // Rotational velocity of the robot.
+  optional float rotational_velocity = 8;
+
+  optional Pose2Df goal_pose = 9;
+
+  optional float target_angle = 10;
+
+  // Tracking confidence.
+  optional float confidence = 4;
+
+  // Raw vision-reported pose.
+  optional Pose2Df pose_raw = 5;
+
+  optional double ssl_time = 6;
+
+  optional float observed_rotational_velocity = 12;
+}
+
+// An RGB-A color representation, with each channel specified as a float
+// from 0 to 1.
+message Color {
+  // Red channel value.
+  required float r = 1;
+
+  // Green channel value.
+  required float g = 2;
+
+  // Blue channel value.
+  required float b = 3;
+
+  // Alpha channel value.
+  optional float a = 4;
+}
+
+message ColoredLine {
+  required Line2Df value = 1;
+  required Color color = 2;
+}
+
+message ColoredPoint {
+  required Vector2f value = 1;
+  required Color color = 2;
+}
+
+message ColoredCircle {
+  required Vector2f center = 1;
+  required float radius = 2;
+  required Color color = 3;
+}
+
+message ColoredEllipse {
+  required Vector2f center = 1;
+  required float radius_1 = 2;
+  required float radius_2 = 3;
+  required float angle = 5;
+  required Color color = 4;
+}
+
+message ColoredArc {
+  required Vector2f center = 1;
+  required float radius = 2;
+  required float angle_start = 3;
+  required float angle_end = 4;
+  required Color color = 5;
+}
+
+message DebugDrawings {
+  repeated ColoredLine lines = 1;
+  repeated ColoredPoint points = 2;
+  repeated ColoredCircle circles = 3;
+  repeated ColoredArc arcs = 4;
+  repeated ColoredEllipse ellipses = 5;
+}
+
+message TextTree {
+  required string text = 1;
+  repeated TextTree sub_tree = 2;
+}
+
+message WorldState {
+  repeated RobotState robots = 1;
+  repeated Vector2f balls = 2;
+  repeated Vector2f ball_observation = 3;
+  repeated Vector2f ball_velocities = 5;
+  repeated Vector2f ball_velocities_observed = 6;
+  optional double ball_time = 4;
+}
+
+message SoccerDebugMessage {
+  optional DebugDrawings drawings = 1;
+  optional TextTree text_log = 2;
+  repeated PrintLog print_logs = 6;
+  repeated StateMachineData tuning_data = 10;
+  optional WorldState world_state = 3;
+  optional SSLVisionProto.SSL_DetectionFrame ssl_detection = 4;
+  optional SSLVisionProto.SSL_GeometryData ssl_geometry = 5;
+  optional double time = 7;
+  optional int32 frame_number = 8;
+  optional bool team_yellow = 9;
+  optional SSL_Referee last_referee = 11;
+}
+
+message PrintLog {
+  // String associated with the print statement
+  required string format_str = 1;
+  // Types of all arguments in data
+  repeated string type_list = 2;
+  // Data corresponding to print arguments
+  repeated bytes data = 3;
+  // Anything that should be within this sub_tree
+  repeated PrintLog nested = 4;
+}
+
+message PrintLogs {
+  repeated PrintLog logs = 1;
+}
+
+message LogWrapper {
+  optional SoccerDebugMessage soccer_debug = 3;
+}
+
+message FactorSettings {
+  optional float ball_accel = 1;
+  optional float step_time = 2;
+  optional float control_error = 3;
+}

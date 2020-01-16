@@ -1,0 +1,22 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Kickoff Us",
+  weight = 1,
+  timeout = 100,
+  applicability = {
+    {"prepare_kickoff_us"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"kicked"} },
+    { outcome = "aborted", condition = {"!prepare_kickoff_us",
+      "!normal_start"}},
+  },
+  roles = {
+    {"kickoff_kicker"},
+    {"setup_attacker"},
+    {"guard_point -100_1000 700"},
+    {"guard_point -100_-1000 700"},
+    {"guard_point -100_2000 700"},
+    {"guard_point -100_-2000 700"},
+  },
+}

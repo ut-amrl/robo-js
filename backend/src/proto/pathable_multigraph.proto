@@ -1,0 +1,15 @@
+import "multigraph.proto";
+package MinuteBotsProto;
+
+// Next id: 3
+message PathWaypoint {
+  required float x = 1;
+  required float y = 2;
+}
+
+// Next id: 4
+message PathableMultiGraphProto {
+  required MinuteBotsProto.MultiGraphProto multi_graph = 1;
+  repeated PathWaypoint path_waypoint_list = 2;
+  repeated PathWaypoint smoothed_path_waypoint_list = 3;
+}

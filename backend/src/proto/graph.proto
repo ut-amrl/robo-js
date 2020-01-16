@@ -1,0 +1,26 @@
+package MinuteBotsProto;
+
+// Vertex of a graph.
+//
+// Next id: 3
+message Vertex {
+  required float x = 1;
+  required float y = 2;
+}
+
+// Undirected edge between two vertices.
+//
+// Next id: 4
+message Edge {
+  required uint64 vertex_1_index = 1;
+  required uint64 vertex_2_index = 2;
+  required float weight = 3;
+}
+
+// Graph containing a list of edges and vertices.
+//
+// Next id: 3
+message GraphProto {
+  repeated Vertex vertex_list = 1;
+  repeated Edge edge_list = 2;
+}

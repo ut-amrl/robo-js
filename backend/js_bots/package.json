@@ -1,0 +1,20 @@
+{
+  "name": "robot-gateway",
+  "version": "0.0.1",
+  "description": "Middleware for robot programming.",
+  "main": "./src/server/index.js",
+  "scripts": {
+    "test": "jshint ./src",
+    "build": "pbjs -t json ../src/proto/js_bots.proto > protos.json",
+    "start": "node ./src/server/index.js"
+  },
+  "dependencies": {
+    "protobufjs": "^6.8.8",
+    "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.0"
+  },
+  "author": "UMass CICS",
+  "license": "BSD-3-Clause"
+}

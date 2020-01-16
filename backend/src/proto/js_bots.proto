@@ -1,0 +1,32 @@
+syntax = "proto2";
+package JSBotsProto;
+
+message Puppet {
+  required uint32 ssl_vision_id = 1;
+  optional float x = 2;
+  optional float y = 3;
+  optional float theta = 4;
+  optional float kick = 5;
+  optional bool dss_ball = 6;
+  optional bool halt = 7;
+  optional bool catch_ball = 8;
+}
+
+message World {
+  message Robot {
+    required uint32 id = 1;
+    required float p_x = 2;
+    required float p_y = 3;
+    required float p_theta = 4;
+    required float v_x = 5;
+    required float v_y = 6;
+    required float v_theta = 7;
+  }
+
+  repeated Robot our_bots = 1;
+  repeated Robot their_bots = 2;
+  required float p_x = 3;
+  required float p_y = 4;
+  required float v_x = 5;
+  required float v_y = 6;
+}

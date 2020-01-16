@@ -1,0 +1,22 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Penalty Kick",
+  weight = 1,
+  timeout = 100,
+  applicability = {
+    {"prepare_penalty_us",},
+  },
+  termination = {
+    { outcome = "completed", condition = {"kicked"} },
+    { outcome = "aborted", condition = {"!prepare_penalty_us",
+      "!normal_start"} },
+  },
+  roles = {
+    {"kickoff_kicker"},
+    {"penalty_recieve"},
+    {"penalty_recieve"},
+    {"penalty_recieve"},
+    {"penalty_recieve"},
+    {"penalty_recieve"},
+  },
+}

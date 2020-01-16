@@ -1,0 +1,24 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Defensive Our Side Offense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"normal_play", "our_half", "possession_them", "!kickoff"},
+    {"normal_play", "our_half", "free_ball", "!kickoff"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_play"} },
+    { outcome = "aborted", condition = {"possession_us"} },
+  },
+  roles = {
+    {"goalie"},
+    {"primary_attacker"},
+    {"primary_defender"},
+    {"primary_defender"},
+    {"secondary_defender"},
+    {"secondary_defender"},
+    {"tertiary_defender"},
+    {"tertiary_defender"}
+  },
+}

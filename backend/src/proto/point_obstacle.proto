@@ -1,0 +1,7 @@
+import "position2d.proto";
+package MinuteBotsProto;
+
+// Next id: 2
+message PointObstacle{
+  repeated Position2d point_list = 1;
+}

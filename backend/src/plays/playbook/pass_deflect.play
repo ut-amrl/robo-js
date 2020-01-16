@@ -1,0 +1,20 @@
+-- Simply passes the ball to the deflection, which shoots
+return {
+  name = "Pass Deflect",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"offense"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!offense"} },
+  },
+  roles = {
+    {"goalie"},
+    {"pass_to_deflect"},
+    {"deflection"},
+    {"primary_defender"},
+    {"primary_defender"},
+    {"primary_defender"},
+  },
+}

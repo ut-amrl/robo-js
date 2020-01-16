@@ -1,0 +1,20 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Naive Offense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"test"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!test"} },
+  },
+  roles = {
+    {"goalie"},
+    {"main_attacker"},
+    {"primary_defender"},
+    {"guard_point 0_1000 90"},
+    {"guard_point 0_2000 0"},
+    {"guard_point 0_3000 200"},
+  },
+}

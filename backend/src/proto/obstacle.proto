@@ -1,0 +1,28 @@
+package MinuteBotsProto;
+
+// Rectangle obstacle.
+//
+// Next id: 5
+message Rectangle {
+  required float x = 1;
+  required float y = 2;
+  required float width = 3;
+  required float height = 4;
+}
+
+// Circle obstacle.
+//
+// Next id: 4
+message Circle {
+  required float x = 1;
+  required float y = 2;
+  required float radius = 3;
+}
+
+// Message containing a list of all obstacles.
+//
+// Next id: 3
+message Obstacles {
+  repeated Rectangle rectangle_list = 1;
+  repeated Circle circle_list = 2;
+}

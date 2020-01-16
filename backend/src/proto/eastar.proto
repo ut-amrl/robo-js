@@ -1,0 +1,30 @@
+syntax = "proto2";
+package MinuteBotsProto.EAstar;
+
+// Next id: 3
+message FreeSpaceVertexProto {
+  required float x = 1;
+  required float y = 2;
+}
+
+// Next id: 3
+message WindowBoxProto {
+  required FreeSpaceVertexProto upper_left = 1;
+  required FreeSpaceVertexProto lower_right = 2;
+}
+
+// Next id: 2
+message FreeSpacePathProto {
+  repeated FreeSpaceVertexProto vertices = 1;
+}
+
+// Next id: 3
+message SearchWindowProto {
+  required WindowBoxProto box = 1;
+  repeated FreeSpacePathProto relevant_paths = 2;
+}
+
+// Next id: 2
+message SearchWindowsWrapperProto {
+  repeated SearchWindowProto search_windows = 1;
+}

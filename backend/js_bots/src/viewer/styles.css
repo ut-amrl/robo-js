@@ -1,0 +1,79 @@
+body {
+  background-color: #1e1e1e;
+  color: white;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+div, select {
+  border-radius: 2px;
+  display: inline;
+  font-size: 18px;
+}
+
+canvas {
+  background-color: green;
+  display: block;
+  margin: auto;
+  padding: 0;
+}
+
+p {
+  font: 36px emoji;
+}
+
+table, td, th {
+  border: 1px solid #42a5f5;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  margin: auto;
+  user-select: text;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+td {
+  padding: 5px;
+}
+
+.btn {
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 16px 32px;
+}
+
+.btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.conf-btn {
+  background-color: blue;
+}
+
+.controls {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.err-msg {
+  color: red;
+}
+
+.start-btn {
+  background-color: green;
+}
+
+.stop-btn {
+  background-color: red;
+}

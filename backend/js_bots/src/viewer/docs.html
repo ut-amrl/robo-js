@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">FUNCTIONS</th>
+        </tr>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Arguments</th>
+          <th scope="col">Description</th>
+          <th scope="col">Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="meth-prompt">
+          <td>
+            <code>prompt</code>
+          </td>
+          <td>
+            <ol>
+              <li>A message for the user.</li>
+            </ol>
+          </td>
+          <td>Opens a browser prompt with the specified message. Returns the response as a string if the user enters one.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.prompt('Enter&nbsp;your&nbsp;name:');</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-set-id">
+          <td>
+            <code>setId</code>
+          </td>
+          <td>
+            <ol>
+              <li>The number of the robot to be controlled.</li>
+              <li>
+                <em>Optional: </em><code>false</code> to allow colliding into the ball.
+              </li>
+            </ol>
+          </td>
+          <td>Waits for roughly 1 second and then takes the number specified and sets that robot as the receiver of subsequent commands in the program. The number passed must be that of a robot present on the field. The robot will avoid running into the ball unless <code>false</code> is passed as a second argument.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.setId(0);</code>
+              </li>
+              <li>
+                <code>robot.setId(3,&nbsp;false);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-time">
+          <td>
+            <code>getTime</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the number of milliseconds elapsed since January 1, 1970 at Midnight.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getTime();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-pos-x">
+          <td>
+            <code>getPosX</code>
+          </td>
+          <td>
+            <ol>
+              <li>Optional: A robot number. The default is the current robot being controlled by the program.</li>
+            </ol>
+          </td>
+          <td>Returns the X-coordinate of the robot corresponding to the number that is passed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getPosX();</code>
+              </li>
+              <li>
+                <code>robot.getPosX(7);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-pos-y">
+          <td>
+            <code>getPosY</code>
+          </td>
+          <td>
+            <ol>
+              <li>Optional: A robot number. The default is the current robot being controlled by the program.</li>
+            </ol>
+          </td>
+          <td>Returns the Y-coordinate of the robot corresponding to the number that is passed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getPosY();</code>
+              </li>
+              <li>
+                <code>robot.getPosY(2);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-pos-angle">
+          <td>
+            <code>getPosAngle</code>
+          </td>
+          <td>
+            <ol>
+              <li>Optional: A robot number. The default is the current robot being controlled by the program.</li>
+            </ol>
+          </td>
+          <td>Returns the angle of the robot corresponding to the number that is passed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getPosAngle();</code>
+              </li>
+              <li>
+                <code>robot.getPosAngle(4);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-vel-x">
+          <td>
+            <code>getVelX</code>
+          </td>
+          <td>
+            <ol>
+              <li>Optional: A robot number. The default is the current robot being controlled by the program.</li>
+            </ol>
+          </td>
+          <td>Returns the velocity in the X direction of the robot corresponding to the number that is passed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getVelX();</code>
+              </li>
+              <li>
+                <code>robot.getVelX(7);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-vel-y">
+          <td>
+            <code>getVelY</code>
+          </td>
+          <td>
+            <ol>
+              <li>Optional: A robot number. The default is the current robot being controlled by the program.</li>
+            </ol>
+          </td>
+          <td>Returns the velocity in the Y direction of the robot corresponding to the number that is passed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getVelY();</code>
+              </li>
+              <li>
+                <code>robot.getVelY(2);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-vel-angle">
+          <td>
+            <code>getVelAngle</code>
+          </td>
+          <td>
+            <ol>
+              <li>Optional: A robot number. The default is the current robot being controlled by the program.</li>
+            </ol>
+          </td>
+          <td>Returns the angular velocity of the robot corresponding to the number that is passed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getVelAngle();</code>
+              </li>
+              <li>
+                <code>robot.getVelAngle(4);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-ball-pos-x">
+          <td>
+            <code>getBallPosX</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the X-coordinate of the ball.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getBallPosX();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-ball-pos-y">
+          <td>
+            <code>getBallPosY</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the Y-coordinate of the ball.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getBallPosY();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-ball-vel-x">
+          <td>
+            <code>getBallVelX</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the velocity in the X direction of the ball.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getBallVelX();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-ball-vel-y">
+          <td>
+            <code>getBallVelY</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the velocity in the Y direction of the ball.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getBallVelY();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-my-x-cell">
+          <td>
+            <code>getMyXCell</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the cell in the X direction of the current robot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getMyXCell();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-my-y-cell">
+          <td>
+            <code>getMyYCell</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns the cell in the Y direction of the current robot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getMyYCell();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-monster-x-cell">
+          <td>
+            <code>getMonsterXCell</code>
+          </td>
+          <td>
+            <ol>
+              <li>The robot number of the monster.</li>
+            </ol>
+          </td>
+          <td>Returns the cell in the X direction of the robot monster.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getMonsterXCell(6);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-get-monster-y-cell">
+          <td>
+            <code>getMonsterYCell</code>
+          </td>
+          <td>
+            <ol>
+              <li>The robot number of the monster.</li>
+            </ol>
+          </td>
+          <td>Returns the cell in the Y direction of the robot monster.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.getMonsterYCell(7);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-wait">
+          <td>
+            <code>wait</code>
+          </td>
+          <td>
+            <ol>
+              <li>Time in seconds.</li>
+            </ol>
+          </td>
+          <td>Waits for the specified number of seconds and then refreshes the observation data.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.wait(5);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-monster-nearby">
+          <td>
+            <code>monsterNearby</code>
+          </td>
+          <td>
+            <ol>
+              <li>The robot number of the monster.</li>
+            </ol>
+          </td>
+          <td>Returns <code>true</code> if the robot monster is within a neighboring square and <code>false</code> otherwise.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.monsterNearby(6);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-forward">
+          <td>
+            <code>moveForward</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Snaps the robot to a grid position and then moves it forward a fixed distance.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveForward();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-by-x">
+          <td>
+            <code>moveByXCells</code>
+          </td>
+          <td>
+            <ol>
+              <li>An integer number of cells.</li>
+            </ol>
+          </td>
+          <td>Snaps the robot to a grid position and then moves it by the specifed number of cells in the X direction.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveByXCells(2);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-by-y">
+          <td>
+            <code>moveByYCells</code>
+          </td>
+          <td>
+            <ol>
+              <li>An integer number of cells.</li>
+            </ol>
+          </td>
+          <td>Snaps the robot to a grid position and then moves it by the specifed number of cells in the Y direction.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveByYCells(1);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-turn-left">
+          <td>
+            <code>turnLeft</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Snaps the robot to the nearest multiple of 90&deg; and then turns it 90&deg; to its left.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.turnLeft();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-turn-right">
+          <td>
+            <code>turnRight</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Snaps the robot to the nearest multiple of 90&deg; and then turns it 90&deg; to its right.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.turnRight();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-collides-X">
+          <td>
+            <code>collidesX</code>
+          </td>
+          <td>
+            <ol>
+              <li>Obstacle X-coordinate.</li>
+              <li>Obstacle Y-coordinate.</li>
+              <li>X1.</li>
+              <li>Y1.</li>
+              <li>X2.</li>
+            </ol>
+          </td>
+          <td>Returns <code>true</code> if the horizontal line joining (X1, Y1) with (X2, Y1) collides into the obstacle point and <code>false</code> otherwise. Assumes all numbers are integers.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.collidesX(2, 2, 2, 4, 3);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-collides-Y">
+          <td>
+            <code>collidesY</code>
+          </td>
+          <td>
+            <ol>
+              <li>Obstacle X-coordinate.</li>
+              <li>Obstacle Y-coordinate.</li>
+              <li>X1.</li>
+              <li>Y1.</li>
+              <li>Y2.</li>
+            </ol>
+          </td>
+          <td>Returns <code>true</code> if the vertical line joining (X1, Y1) with (X1, Y2) collides into the obstacle point and <code>false</code> otherwise. Assumes all numbers are integers.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.collidesY(3, 6, 3, 2, 4);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-aim-left">
+          <td>
+            <code>aimLeft</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Moves the robot behind the ball and to its left while aiming at the goal. At this position it will shoot at the right corner of the goal.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.aimLeft();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-aim-right">
+          <td>
+            <code>aimRight</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Moves the robot behind the ball and to its right while aiming at the goal. At this position it will shoot at the left corner of the goal.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.aimRight();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-aim-center">
+          <td>
+            <code>aimCenter</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Moves the robot directly behind the ball while aiming at the goal. At this position it will shoot at the center of the goal.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.aimCenter();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-strike">
+          <td>
+            <code>strike</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will approach the ball from the current position set by the most recent <code>aim</code> command and then shoot. If no <code>aim</code> position was set, then center is assumed.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.strike();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-strike-left">
+          <td>
+            <code>strikeLeft</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will approach the ball from the current position set by the most recent <code>aim</code> command. If no <code>aim</code> position was set, then center is assumed. When it gets to the ball it will effectively <code>aimLeft</code> and shoot at the right corner. If the <code>aim</code> direction is not left, then there is a chance of missing the target; 30% if the  <code>aim</code> direction is right and 10% if the direction is center.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.strikeLeft();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-strike-right">
+          <td>
+            <code>strikeRight</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will approach the ball from the current position set by the most recent <code>aim</code> command. If no <code>aim</code> position was set, then center is assumed. When it gets to the ball it will effectively <code>aimRight</code> and shoot at the left corner. If the <code>aim</code> direction is not right, then there is a chance of missing the target; 30% if the  <code>aim</code> direction is left and 10% if the direction is center.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.strikeRight();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-strike-center">
+          <td>
+            <code>strikeCenter</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will approach the ball from the current position set by the most recent <code>aim</code> command. If no <code>aim</code> position was set, then center is assumed. When it gets to the ball it will effectively <code>aimCenter</code> and shoot at the center. If the <code>aim</code> direction is not center, then there is a 10% chance of missing the target.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.strikeCenter();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-block-left">
+          <td>
+            <code>blockLeft</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will assume general goalie position if it is not in such position already and proceed to block its left post.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.blockLeft();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-block-right">
+          <td>
+            <code>blockRight</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will assume general goalie position if it is not in such position already and proceed to block its right post.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.blockRight();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-block-center">
+          <td>
+            <code>blockCenter</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will assume general goalie position if it is not in such position already and proceed to block the center of the goal.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.blockCenter();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-block-random">
+          <td>
+            <code>blockRandom</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>The robot will assume general goalie position if it is not in such position already and proceed to <code>blockLeft</code>, <code>blockRight</code>, or <code>blockCenter</code> with equal chance.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.blockRandom();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-distance-to">
+          <td>
+            <code>distanceTo</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+              <li>Y-coordinate.</li>
+            </ol>
+          </td>
+          <td>Calculates the distance from the position of the current robot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.distanceTo(27,&nbsp;-491);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-to">
+          <td>
+            <code>moveTo</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+              <li>Y-coordinate.</li>
+              <li>Angle of rotation.</li>
+            </ol>
+          </td>
+          <td>If the X or Y-coordinate are beyond the boundaries of where the robot may move, then they are set to the maximum/minimum allowable values. Moves the robot to the specified position.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveTo(100,&nbsp;100,&nbsp;20);</code>
+              </li>
+              <li>
+                <code>robot.moveTo(-324,&nbsp;1132,&nbsp;223);</code>
+              </li>
+              <li>
+                <code>robot.moveTo(0,&nbsp;-723,&nbsp;-90);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-to-xy">
+          <td>
+            <code>moveToXY</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+              <li>Y-coordinate.</li>
+            </ol>
+          </td>
+          <td>If the X or Y-coordinate are beyond the boundaries of where the robot may move, then they are set to the maximum/minimum allowable values. Moves the robot to the specified position, leaving the angle of rotation as is.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveToXY(820,&nbsp;120);</code>
+              </li>
+              <li>
+                <code>robot.moveToXY(-1302,&nbsp;567);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-to-x">
+          <td>
+            <code>moveToX</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+            </ol>
+          </td>
+          <td>If the X-coordinate is beyond the boundaries of where the robot may move, then it is set to the maximum/minimum allowable value. Moves the robot to the specified position, leaving the Y-coordinate and angle of rotation as is.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveToX(123);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-to-y">
+          <td>
+            <code>moveToY</code>
+          </td>
+          <td>
+            <ol>
+              <li>Y-coordinate.</li>
+            </ol>
+          </td>
+          <td>If the Y-coordinate is beyond the boundaries of where the robot may move, then it is set to the maximum/minimum allowable value. Moves the robot to the specified position, leaving the X-coordinate and angle of rotation as is.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveToY(-648);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-turn-to">
+          <td>
+            <code>turnTo</code>
+          </td>
+          <td>
+            <ol>
+              <li>Angle of rotation.</li>
+            </ol>
+          </td>
+          <td>Rotates the robot to the specified angle, leaving its X/Y position unchanged.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.turnTo(225);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-by">
+          <td>
+            <code>moveBy</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+              <li>Y-coordinate.</li>
+              <li>Angle of rotation.</li>
+            </ol>
+          </td>
+          <td>Takes the current position of the robot and adds the specified values. If the computed X or Y-coordinate are beyond the boundaries of where the robot may move, then they are set to the maximum/minimum allowable values. Moves the robot to the computed position.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveBy(100,&nbsp;100,&nbsp;20);</code>
+              </li>
+              <li>
+                <code>robot.moveBy(-324,&nbsp;1132,&nbsp;223);</code>
+              </li>
+              <li>
+                <code>robot.moveBy(0,&nbsp;-723,&nbsp;-90);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-by-xy">
+          <td>
+            <code>moveByXY</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+              <li>Y-coordinate.</li>
+            </ol>
+          </td>
+          <td>Takes the current position of the robot and adds the specified values. If the computed X or Y-coordinate are beyond the boundaries of where the robot may move, then they are set to the maximum/minimum allowable values. Moves the robot to the computed position, leaving the angle of rotation as is.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveByXY(820,&nbsp;120);</code>
+              </li>
+              <li>
+                <code>robot.moveByXY(-1302,&nbsp;567);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-by-x">
+          <td>
+            <code>moveByX</code>
+          </td>
+          <td>
+            <ol>
+              <li>X-coordinate.</li>
+            </ol>
+          </td>
+          <td>Takes the current X-coordinate of the robot and adds the specified value. If the computed X-coordinate is beyond the boundaries of where the robot may move, then it is set to the maximum/minimum allowable value. Moves the robot to the computed position, leaving the Y-coordinate and angle of rotation as is.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveByX(123);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-move-by-y">
+          <td>
+            <code>moveByY</code>
+          </td>
+          <td>
+            <ol>
+              <li>Y-coordinate.</li>
+            </ol>
+          </td>
+          <td>Takes the current Y-coordinate of the robot and adds the specified value. If the computed Y-coordinate is beyond the boundaries of where the robot may move, then it is set to the maximum/minimum allowable value. Moves the robot to the computed position, leaving the X-coordinate and angle of rotation as is.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.moveByY(-648);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-turn-by">
+          <td>
+            <code>turnBy</code>
+          </td>
+          <td>
+            <ol>
+              <li>Angle of rotation.</li>
+            </ol>
+          </td>
+          <td>Takes the current angle of the robot and adds the specified value. Rotates the robot to the computed angle, leaving its X/Y position unchanged.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.turnBy(225);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-predict-x">
+          <td>
+            <code>predictX</code>
+          </td>
+          <td>
+            <ol>
+              <li>A robot number.</li>
+              <li>Time in seconds.</li>
+            </ol>
+          </td>
+          <td>Predicts the X position of the specified robot after the specified number of seconds based on its current position and velocity.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.predictX(2,&nbsp;3);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-predict-y">
+          <td>
+            <code>predictY</code>
+          </td>
+          <td>
+            <ol>
+              <li>A robot number.</li>
+              <li>Time in seconds.</li>
+            </ol>
+          </td>
+          <td>Predicts the Y position of the specified robot after the specified number of seconds based on its current position and velocity.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.predictY(4,&nbsp;1);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-angle-from">
+          <td>
+            <code>angleFrom</code>
+          </td>
+          <td>
+            <ol>
+              <li>X1.</li>
+              <li>Y1.</li>
+              <li>X2.</li>
+              <li>Y2.</li>
+            </ol>
+          </td>
+          <td>Returns the angle from the first pair of coordinates to the second pair of coordinates.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.angleFrom(510, 234, 1700, -377);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-turn-around-ball">
+          <td>
+            <code>turnAroundBall</code>
+          </td>
+          <td>
+            <ol>
+              <li>Angle at which to position the robot.</li>
+            </ol>
+          </td>
+          <td>Pivots the robot around the ball to the angle specified. Once complete the robot will be facing the ball.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.turnAroundBall(320);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-can-catch">
+          <td>
+            <code>canCatch</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Returns <code>true</code> if the robot is more than 100mm from the ball and the ball is moving more than 100mm/sec; <code>false</code> otherwise.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.canCatch();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-catch-ball">
+          <td>
+            <code>catchBall</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Catches a ball moving in the general direction of the current robot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.catchBall();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-dribble">
+          <td>
+            <code>dribble</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Dribbles the ball in the direction the robot is facing and moves with the ball. Dribble will complete once the ball has stopped moving, after which the robot will be ready to dribble again or shoot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.dribble();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-shoot">
+          <td>
+            <code>shoot</code>
+          </td>
+          <td>
+            <ol></ol>
+          </td>
+          <td>Kicks the ball in the direction the robot is facing.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.shoot();</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-track-position">
+          <td>
+            <code>trackPosition</code>
+          </td>
+          <td>
+            <ol>
+              <li>A robot number.</li>
+            </ol>
+          </td>
+          <td>A function intended for a goalie program in which the current robot will mirror the Y-coordinate, within the bounds of the goal posts, of the specified robot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.trackPosition(5);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr id="meth-track-rotation">
+          <td>
+            <code>trackRotation</code>
+          </td>
+          <td>
+            <ol>
+              <li>A robot number.</li>
+            </ol>
+          </td>
+          <td>A function intended for a goalie program in which the current robot will adjusts its position, within the bounds of the goal posts, based on the angle of the specified robot.</td>
+          <td>
+            <ul>
+              <li>
+                <code>robot.trackRotation(0);</code>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">ERRORS</th>
+        </tr>
+        <tr>
+          <th scope="col">Message</th>
+          <th scope="col">Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="err-numb-required">
+          <td class="err-msg">
+            <code>Please pass numbers to the function.</code>
+          </td>
+          <td>Numbers are not passed when they are required.</td>
+        </tr>
+        <tr id="err-sim-down">
+          <td class="err-msg">
+            <code>No data found; make sure your simulator is running.</code>
+          </td>
+          <td>The simulator has not been started or it has been stopped while the program is running.</td>
+        </tr>
+        <tr id="err-invalid-bot-numb">
+          <td class="err-msg">
+            <code>Invalid robot number: &lt;id&gt;</code>
+          </td>
+          <td>The argument is not a number in the range of 0 to 9.</td>
+        </tr>
+        <tr id="err-bot-not-found">
+          <td class="err-msg">
+            <code>Robot not found: &lt;id&gt;</code>
+          </td>
+          <td>The robot with the specified number is not on the field.</td>
+        </tr>
+        <tr id="err-ball-out">
+          <td class="err-msg">
+            <code>Ball out of bounds.</code>
+          </td>
+          <td>The ball is outside the field boundaries and cannot be interacted with.</td>
+        </tr>
+        <tr id="err-ball-fast">
+          <td class="err-msg">
+            <code>Ball is moving too fast.</code>
+          </td>
+          <td>When attempting to turn around the ball, the ball is moving too fast.</td>
+        </tr>
+        <tr id="err-facing-ball">
+          <td class="err-msg">
+            <code>Robot must be facing the ball.</code>
+          </td>
+          <td>When attempting to dribble or shoot the robot is not facing the ball.</td>
+        </tr>
+        <tr id="err-ball-far">
+          <td class="err-msg">
+            <code>&lt;distance&gt;mm is too far from ball; must be within 300.</code>
+          </td>
+          <td>When attempting to dribble or shoot the robot is not close enough to the ball.</td>
+        </tr>
+        <tr id="err-ball-slow">
+          <td class="err-msg">
+            <code>Ball is moving too slow.</code>
+          </td>
+          <td>When attempting to catch the ball, the ball is moving too slow.</td>
+        </tr>
+        <tr id="err-bot-close">
+          <td class="err-msg">
+            <code>Robot is too close to ball.</code>
+          </td>
+          <td>When attempting to catch the ball, the ball is too close to the robot.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+import "pathable_multigraph.proto";
+package MinuteBotsProto;
+
+// Next id: 2
+message Path {
+  repeated PathWaypoint path_waypoint_list = 1;
+}

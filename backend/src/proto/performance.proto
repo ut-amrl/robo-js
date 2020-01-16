@@ -1,0 +1,54 @@
+package MinuteBotsProto;
+
+// Message containing set of times for a given trial.
+//
+// Next id: 11
+message Trial {
+  repeated double trial_times_list = 1;
+  repeated double setup_times_list = 9;
+  repeated double update_times_list = 10;
+  required uint64 seed = 2;
+  required int64 samples = 3;
+  required double path_distance = 4;
+  required double path_length = 5;
+  required double smoothed_path_length = 6;
+  required bool path_found = 7;
+  required bool scaffold = 8;
+}
+
+// Message containing configuration for RRT.
+//
+// Next id: 2
+message RRTConfig {
+  required float scaffold_bias = 1;
+}
+
+// Message containing configuration for PRM.
+//
+// Next id: 7
+message PRMConfig {
+  required int64 num_layers = 1;
+  required int64 verticies_per_layer = 2;
+  required float layer_offset = 3;
+  required int64 total_verticies = 4;
+  required float connect_radius = 5;
+  required int64 num_edges = 6;
+  optional int64 num_obstacles = 7;
+}
+
+// Message containing set of trials for a given configuration.
+//
+// Next id: 4
+message Configuration {
+  repeated Trial trial_list = 1;
+  optional RRTConfig rrt_config = 2;
+  optional PRMConfig prm_config = 3;
+}
+
+// Message containing run over several configurations.
+//
+// Next id: 3
+message Scenerio {
+  required string scenerio_name = 1;
+  repeated Configuration configuration_list = 2;
+}

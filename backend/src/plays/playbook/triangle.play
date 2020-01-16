@@ -1,0 +1,21 @@
+-- A test play which triggers the triangle tactic for a single robot. All other
+-- should not be used in an actual game.
+return {
+  name = "TrianglePlay",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+  {"!halt"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_start"} },
+  },
+  roles = {
+    {"stopped"},
+    {"triangle"},
+    {"stopped"},
+    {"stopped"},
+    {"stopped"},
+    {"stopped"},
+  },
+}

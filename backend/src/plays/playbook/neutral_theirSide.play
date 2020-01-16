@@ -1,0 +1,22 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Neutral Their Side Offense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"normal_play", "their_half", "!kickoff"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_play"} },
+  },
+  roles = {
+    {"goalie"},
+    {"primary_attacker"},
+    {"primary_defender"},
+    {"primary_defender"},
+    {"tertiary_defender"},
+    {"tertiary_defender"},
+    {"setup_attacker"},
+    {"setup_attacker"}
+  },
+}

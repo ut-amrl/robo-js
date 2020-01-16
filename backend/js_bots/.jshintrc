@@ -1,0 +1,24 @@
+{
+  "bitwise": true,
+  "browser": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esversion": 6,
+  "expr": true,
+  "forin": true,
+  "freeze": true,
+  "node": true,
+  "latedef": true,
+  "noarg": true,
+  "nocomma": true,
+  "nonbsp": true,
+  "nonew": true,
+  "shadow": true,
+  "strict": "global",
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "WebSocket": false,
+    "CanvasRenderingContext2D": false
+  }
+}

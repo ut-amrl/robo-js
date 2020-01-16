@@ -1,0 +1,66 @@
+import "position2d.proto";
+package MinuteBotsProto;
+
+// Next id: 3
+message SearchTreeEdge {
+  repeated Position2d current_positions = 1;
+  repeated Position2d prev_positions = 2;
+}
+
+// Next id: 3
+message EightGridDistance {
+  required int64 straight = 1;
+  required int64 angled = 2;
+}
+
+// Next id: 5
+message CurrentEdge {
+  required EightGridDistance heuristic = 1;
+  repeated EightGridDistance distances = 2;
+  repeated EightGridDistance times = 3;
+  required SearchTreeEdge search_tree_edge = 4;
+}
+
+// Next id: 2
+message SharedPosition {
+  repeated Position2d position = 1;
+}
+
+// Next id: 5
+message SearchTree {
+  required CurrentEdge current_edge = 1;
+  repeated SearchTreeEdge other_edge_list = 2;
+  repeated SharedPosition closed_positions = 3;
+  repeated SharedPosition open_positions = 4;
+  required string status = 5;
+}
+
+// Next id: 2
+message ParentMap {
+  repeated SearchTreeEdge edges = 1;
+}
+
+// Next id: 3
+message JointPosition {
+  required Position2d p1 = 1;
+  required Position2d p2 = 2;
+}
+
+// Next id: 4
+message SearchNode {
+  required float weight = 1;
+  required float heuristic = 2;
+  repeated JointPosition path = 3;
+}
+
+// Next id: 3
+message ClosedState {
+  required JointPosition position = 1;
+  required float weight = 2;
+}
+
+// Next id: 3
+message SimpleSearchTree {
+  repeated ClosedState closed_list = 1;
+  repeated SearchNode open_list = 2;
+}

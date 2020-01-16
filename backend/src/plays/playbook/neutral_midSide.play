@@ -1,0 +1,24 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Neutral Midfield Offense",
+  weight = 1,
+  timeout = 15,
+  applicability = {
+    {"normal_play", "midfield", "possession_us", "!kickoff"},
+    {"normal_play", "midfield", "free_ball", "!kickoff"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!normal_play"} },
+    { outcome = "aborted", condition = {"possession_them"} },
+  },
+  roles = {
+    {"goalie"},
+    {"primary_attacker"},
+    {"primary_defender"},
+    {"primary_defender"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+    {"secondary_defender"},
+    {"tertiary_defender"}
+  },
+}

@@ -1,0 +1,23 @@
+-- A simple offense play intended to be used in the absence of better options
+return {
+  name = "Their Direct Free Kick",
+  weight = 1,
+  timeout = 9999999,
+  applicability = {
+    {"direct_free_them","!normal_play"},
+  },
+  termination = {
+    { outcome = "aborted", condition = {"!direct_free_them"}, {"halt"}},
+    { outcome = "aborted", condition = {"normal_play"}, {"halt"}},
+  },
+  roles = {
+    {"goalie"},
+    {"primary_defender"},
+    {"primary_defender"},
+    {"secondary_defender"},
+    {"tertiary_defender"},
+    {"safe_follow_ball"},
+    {"setup_attacker"},
+    {"setup_attacker"},
+  },
+}
