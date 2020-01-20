@@ -1,12 +1,7 @@
 # Robo-JS 🤖
 This repository is effectively the software artifact for the white paper [Making High-Performance Robots Safe and Easy to Use ForAn Introduction to Computing](https://arxiv.org/abs/1909.03110). As such, it is meant for use not development.
 
-### Limitations ❌
-- The soccer binary was built and tested on **Ubuntu 18.04.3 LTS**. Ubuntu is a hard requirement. Other versions of Ubuntu have not been tested, proceed at your own risk.
-
-- The Web IDE must be accessed from the same machine running the soccer binary (i.e. localhost). This requirement could be alleviated with further engineering effort, if there is interest.
-
-- The Google account feature as described in the publication is not present.
+![Demo](https://people.cs.umass.edu/~jspitzer/demo.gif)
 
 ### Contents 📦
 - `backend/`: Contains the soccer simulation binary as well as the Node.js middleware. The middleware communicates with the Web client via a WS connection and with the soccer program via UDP.
@@ -34,3 +29,10 @@ Both the `runBackend.sh` and `runFrontend.sh` must be left running for the syste
 
 ### Problems 🔴
 See [Issues](../../issues); if someone has not already filed an issue for your problem, then please create one. Be descriptive.
+
+### Limitations ❌
+- The soccer binary was built and tested on **Ubuntu 18.04.3 LTS**. An Ubuntu distrubtion is a hard requirement. Other versions of Ubuntu have not been tested.
+
+- The Web IDE must be accessed from the same machine running the soccer binary (i.e. localhost). This requirement could be alleviated with further engineering effort, if there is interest.
+
+- The Google account feature as described in the publication is not present.
