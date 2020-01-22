@@ -31,7 +31,7 @@ Both the `runBackend.sh` and `runFrontend.sh` must be left running for the syste
 See [Issues](../../issues); if someone has not already filed an issue for your problem, then please create one. Be descriptive.
 
 ### Limitations ❌
-- The soccer binary was built and tested on **Ubuntu 18.04.3 LTS**. An Ubuntu distrubtion is a hard requirement. Other versions of Ubuntu have not been tested.
+- The soccer binary was built and tested on **Ubuntu 18.04.3 LTS**. An Ubuntu-like distribution is a hard requirement. If you do not have such a machine readily available, then you can use a minimal [Lubuntu OVA](https://github.com/Virtual-Machines/Lubuntu-VirtualBox), which has been tested.
 
 - The Web IDE must be accessed from the same machine running the soccer binary (i.e. localhost). This requirement could be alleviated with further engineering effort, if there is interest.
 

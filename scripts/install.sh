@@ -12,7 +12,11 @@ if [[ ! $(dpkg -s libspqr2) ]]; then
 fi
 
 if [[ ! $(dpkg -s libtbb2) ]]; then
-  sudo apt-get install libspqr2
+  sudo apt-get install libtbb2
+fi
+
+if [[ ! $(dpkg -s libprotobuf10) ]]; then
+  sudo apt-get install libprotobuf10
 fi
 
 if [[ ! $(command -v make) ]]; then
@@ -65,3 +69,7 @@ if ! ldconfig -p | grep -q libre2; then
     make -j"$(nproc)" test && sudo make install && \
   popd || exit
 fi
+
+echo '
+Please exit and open a new terminal.
+'
